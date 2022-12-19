@@ -1,4 +1,4 @@
-import pymysql
+import sqlalchemy
 import pandas as pd
 
 
@@ -14,8 +14,8 @@ class DataUtil:
         self.charset = charset
 
     def connect(self):
-        self.con = pymysql.connect(host=self.host, database=self.dbname, user=self.user, password=self.password,
-                                   port=self.port, charset=self.charset)
+        connect_str = 'mysql+pymysql://'+self.user+':'+self.password+'@'+self.host+':'+str(self.port)+'/'+self.dbname
+        self.con = sqlalchemy.create_engine(connect_str)
 
     def close(self):
         self.con.close
@@ -24,7 +24,6 @@ class DataUtil:
         try:
             self.connect()
             df = pd.read_sql(sql, self.con)
-            self.close()
             return df
         except:
             print("查询失败")
