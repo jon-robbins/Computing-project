@@ -1,5 +1,5 @@
 from oldfartsfinalproject import data_util
-from oldfartsfinalproject import oldfarts_model
+from oldfartsfinalproject import data_preprocessing
 import os
 
-__all__ = ["data_util", "oldfarts_model", "os"]
+__all__ = ["data_util", "data_preprocessing", "os"]
