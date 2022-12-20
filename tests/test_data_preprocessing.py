@@ -10,14 +10,14 @@ class TestDataPreprocessing(unittest.TestCase):
         df_a = pd.DataFrame({"a": [None, None]})
         df_b = pd.DataFrame({"a": [1, 1]})
         df = dp.impute_na(df_a, [("a", 1)])
-        self.assertEqual(df, df_b)
+        pd.testing.assert_frame_equal(df, df_b)
 
     def test_to_num(self):
         df_test = pd.DataFrame({"a": ["1", "1"]})
-        df_result = pd.DataFrame({"a": [1.00, 1.00]})
-        self.assertEqual(dp.to_num(df_test, ["a"]), df_result)
+        df_result = pd.DataFrame({"a": [1, 1]})
+        pd.testing.assert_frame_equal(dp.to_num(df_test, ["a"]), df_result)
 
     def test_delete_unnec_cols(self):
         df_test = pd.DataFrame({"totaltaxvalue": ["1"], "a": ["1"]})
         df_result = pd.DataFrame({"a": ["1"]})
-        self.assertEqual(dp.delete_unnec_cols(df_test, ["totaltaxvalue"]), df_result)
+        pd.testing.assert_frame_equal(dp.delete_unnec_cols(df_test, 0.4, ["totaltaxvalue"]), df_result)
