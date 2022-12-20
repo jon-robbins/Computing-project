@@ -20,19 +20,18 @@ def mean_absolute_error(act, pred):
 
 # MSE
 def mean_squared_error(act, pred):
-     """
+    """
     Agrs: (act,pred)
 
     Calculate mean squared error by comparing the actual test data output and the model predicted ouptut.
 
     Returns the value of MAE
     """
+    diff = pred - act
+    differences_squared = diff ** 2
+    mean_diff = differences_squared.mean()
 
-   diff = pred - act
-   differences_squared = diff ** 2
-   mean_diff = differences_squared.mean()
-   
-   return mean_diff
+    return mean_diff
 
 # R-squared
 def rsquared(act, pred):
