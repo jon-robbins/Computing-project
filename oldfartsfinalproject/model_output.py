@@ -48,7 +48,6 @@ class ModelOutput:
             r2_score_model = self.model.score(x_test, y_test)
         else:
             r2_score_model = r2_score(y_test, self.model.predict(x_test))
-
         print("R2 of linear model on train set: {:.2f}".format(r2_score_model))
 
     def regression_output(self, x_predict):
