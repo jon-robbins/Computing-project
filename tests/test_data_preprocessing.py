@@ -16,3 +16,8 @@ class TestDataPreprocessing(unittest.TestCase):
         df_test = pd.DataFrame({"a": ["1", "1"]})
         df_result = pd.DataFrame({"a": [1.00, 1.00]})
         self.assertEqual(dp.to_num(df_test, ["a"]), df_result)
+
+    def test_delete_unnec_cols(self):
+        df_test = pd.DataFrame({"totaltaxvalue": ["1"], "a": ["1"]})
+        df_result = pd.DataFrame({"a": ["1"]})
+        self.assertEqual(dp.delete_unnec_cols(df_test, ["totaltaxvalue"]), df_result)
