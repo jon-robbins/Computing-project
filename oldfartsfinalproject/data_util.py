@@ -26,7 +26,7 @@ class DataUtil:
             df = pd.read_sql(sql, self.con)
             return df
         except:
-            print("查询失败")
+            print("failed")
             return None
 
     def datafrompath(self, path):
@@ -34,5 +34,5 @@ class DataUtil:
             df = pd.read_csv(path, sep=',')
             return df
         except:
-            print("查询失败")
+            print("failed")
             return None
