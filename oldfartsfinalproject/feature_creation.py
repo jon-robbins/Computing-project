@@ -36,6 +36,9 @@ def lower_outlier_dummy(df, col: str):
     df.loc[df.col >= lower_bound, f'{col}upper_outlier'] = 0
     return df
 
+
+#API draft for getting location data from long/lat
+
 # import pandas as pd
 # from geopy.geocoders import Nominatim
 # geolocator = Nominatim(user_agent="GoogleV3")
