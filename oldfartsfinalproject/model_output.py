@@ -46,6 +46,12 @@ class ModelOutput:
             r2_score_model = self.model.score(x_test, y_test)
         elif self.model_name == 'LassoCV':
             r2_score_model = self.model.score(x_test, y_test)
+        elif self.model_name == 'DecisionTree':
+            r2_score_model = r2_score(y_test, self.model.predict(x_test))
+        elif self.model_name == 'RandomForest':
+            r2_score_model = r2_score(y_test, self.model.predict(x_test))
+        elif self.model_name == 'XGBoost':
+            r2_score_model = r2_score(y_test, self.model.predict(x_test))
         else:
             r2_score_model = r2_score(y_test, self.model.predict(x_test))
         print("R2 of "+self.model_name+" model on train set: {:.2f}".format(r2_score_model))

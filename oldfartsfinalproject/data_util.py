@@ -36,3 +36,6 @@ class DataUtil:
         except:
             print("failed")
             return None
+
+    def datafromoracle(self, sql):
+        pass
