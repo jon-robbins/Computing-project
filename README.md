@@ -1,3 +1,5 @@
+# Welcome to download our project from https://pypi.org/project/oldfartsfinalproject/
+# pip install oldfartsfinalproject
 # Computing project
 
 
