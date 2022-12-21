@@ -1,7 +1,5 @@
 # Create training and test split
 
-# Note, in class we were given both training and test data sets. For this, I'm assuming we're getting a training set, then splitting it into test and training, then remove the target variable for the test set
-
 from sklearn.model_selection import train_test_split
 
 
