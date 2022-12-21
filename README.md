@@ -90,7 +90,11 @@
          
          
          
-               
+ ## Guideline to expand
+
+        The different steps of the pipeline are modularised into different module folders, namely the data preprocessing, feature creation, test train split, model output(included model training) and model output .
+
+        Each module conatins functions and any addition could be added as a new function to the module
  
  
  
